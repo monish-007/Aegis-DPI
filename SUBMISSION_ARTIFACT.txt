@@ -1,0 +1,7 @@
+Aegis-DPI is a scalable, multilingual AI platform — designed as a Digital Public Good — that aggregates citizen development requests via voice, text, and messaging apps across diverse linguistic regions. 
+
+Governments often struggle to consolidate citizen feedback and align it with national infrastructure priorities. Development requests live in fragmented systems, leading to misaligned public spending, unaddressed infrastructure gaps, and no way to measure the impact of large-scale digital public infrastructure initiatives.
+
+Aegis-DPI solves this by analysing large datasets combining unstructured citizen feedback with national demographic data, infrastructure indices, and public investment plans. Crucially, Aegis-DPI pairs this AI analysis with a deterministic policy gate. The LLM acts as a sensor—translating and structuring data—but never makes the final allocation decision. The bounding gate enforces strict priority thresholds to prevent hallucinations.
+
+Valid requests are surfaced to BRICS policymakers via a real-time dashboard featuring geographic heatmaps and investment alignment overlays, surfacing demand hotspots and recommending high-priority development projects to national policymakers across BRICS nations.
