@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; background: #0f1117; color: #e2e8f0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; color: #1e293b; }
     .mono { font-family: 'JetBrains Mono', monospace; }
     pre { white-space: pre-wrap; word-break: break-word; }
     ::-webkit-scrollbar { width: 5px; }
@@ -48,8 +48,8 @@
     ::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
 
     /* Glass panel */
-    .glass { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(12px); }
-    .glass-bright { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+    .bg-white border border-slate-200 shadow-sm { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); backdrop-filter: blur(12px); }
+    .glass-bright { background: #f8fafc; border: 1px solid #cbd5e1; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
 
     /* Pipeline step states */
     .step-idle    { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
@@ -82,7 +82,7 @@
     .feed-entry { animation: feedSlide 0.35s ease-out; }
 
     /* Hero gradient */
-    .hero-gradient {
+    .bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-sm {
       background: linear-gradient(135deg, rgba(67,97,238,0.08) 0%, rgba(16,185,129,0.06) 50%, rgba(245,158,11,0.04) 100%);
       border: 1px solid rgba(67,97,238,0.15);
     }
@@ -126,31 +126,31 @@
   <div class="brics-stripe"></div>
 
   <!-- ─── NAVBAR ─────────────────────────────────────── -->
-  <nav class="sticky top-0 z-50 bg-[#0f1117]/95 backdrop-blur border-b border-white/5">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-14">
         <div class="flex items-center gap-6">
           <div class="flex items-center gap-2.5">
-            <svg class="w-5 h-5 text-dpi-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <svg class="w-5 h-5 text-dpi-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
             </svg>
-            <span class="text-sm font-bold text-white">Aegis-DPI</span>
-            <span class="text-white/20">|</span>
-            <span class="text-xs text-white/40">Citizen Infrastructure Platform</span>
+            <span class="text-sm font-bold text-slate-900">Aegis-DPI</span>
+            <span class="text-slate-900/20">|</span>
+            <span class="text-xs text-slate-500">Citizen Infrastructure Platform</span>
           </div>
-          <div class="hidden md:flex items-center gap-1 text-xs text-white/30 font-mono">
-            <span>brics</span><span class="text-white/15">/</span><span>aegis-dpi</span><span class="text-white/15">/</span><span class="text-dpi-500">live</span>
+          <div class="hidden md:flex items-center gap-1 text-xs text-slate-500 font-mono">
+            <span>brics</span><span class="text-slate-900/15">/</span><span>aegis-dpi</span><span class="text-slate-900/15">/</span><span class="text-dpi-700">live</span>
           </div>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-xs text-civic-500 bg-civic-500/10 border border-civic-500/20 px-2.5 py-1 rounded font-medium flex items-center gap-1.5">
+          <span class="text-xs text-civic-700 bg-civic-500/10 border border-civic-500/20 px-2.5 py-1 rounded font-medium flex items-center gap-1.5">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-civic-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-civic-500"></span>
             </span>
             Ingestion Active
           </span>
-          <select id="envToggle" class="text-xs bg-white/5 border border-white/10 rounded px-2.5 py-1 text-white/60 font-medium focus:outline-none focus:ring-1 focus:ring-dpi-500">
+          <select id="envToggle" class="text-xs bg-slate-100 border border-slate-300 rounded px-2.5 py-1 text-slate-600 font-medium focus:outline-none focus:ring-1 focus:ring-dpi-500">
             <option value="test">Demo Mode</option>
           </select>
         </div>
@@ -162,12 +162,12 @@
   <div id="toast-container" class="fixed top-16 right-4 z-[100] flex flex-col gap-2 pointer-events-none"></div>
 
   <!-- Shown until the portal has resolved its initial backend reads. -->
-  <div id="initial-loading" role="status" aria-live="polite" class="fixed inset-x-0 top-14 z-40 border-b border-dpi-500/20 bg-dpi-900/80 backdrop-blur px-6 py-3 shadow-sm">
-    <div class="max-w-7xl mx-auto flex items-center gap-3 text-sm text-dpi-200">
+  <div id="initial-loading" role="status" aria-live="polite" class="fixed inset-x-0 top-14 z-40 border-b border-slate-200 bg-white/90 backdrop-blur px-6 py-3 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center gap-3 text-sm text-dpi-700">
       <span class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-dpi-700 border-t-dpi-400"></span>
       <div>
         <p class="font-medium">Initializing platform — loading multilingual feedback pipeline…</p>
-        <p id="initial-loading-detail" class="text-xs text-dpi-400 mt-0.5">Connecting to ingestion channels and demographic indices.</p>
+        <p id="initial-loading-detail" class="text-xs text-dpi-600 mt-0.5">Connecting to ingestion channels and demographic indices.</p>
       </div>
     </div>
   </div>
@@ -176,48 +176,48 @@
   <main class="max-w-7xl mx-auto px-6 py-6">
 
     <!-- Hero header -->
-    <div class="hero-gradient rounded-xl px-6 py-5 mb-6">
+    <div class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-sm rounded-xl px-6 py-5 mb-6">
       <div class="flex items-start justify-between">
         <div>
           <h1 class="text-xl font-extrabold gradient-text tracking-tight">Citizen-Centric DPI & Infrastructure Prioritization</h1>
-          <p class="text-sm text-white/50 mt-1.5 max-w-2xl">AI-powered multilingual platform aggregating citizen development requests from voice, text, and messaging apps — recommending high-priority infrastructure projects to BRICS policymakers.</p>
+          <p class="text-sm text-slate-600 mt-1.5 max-w-2xl">AI-powered multilingual platform aggregating citizen development requests from voice, text, and messaging apps — recommending high-priority infrastructure projects to BRICS policymakers.</p>
         </div>
-        <div class="hidden md:flex items-center gap-2 text-[10px] font-mono text-white/30">
-          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">🇮🇳 India</span>
-          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">🇨🇳 China</span>
-          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">🇧🇷 Brazil</span>
-          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">🇷🇺 Russia</span>
-          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">🇿🇦 S. Africa</span>
+        <div class="hidden md:flex items-center gap-2 text-[10px] font-mono text-slate-500">
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-300">🇮🇳 India</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-300">🇨🇳 China</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-300">🇧🇷 Brazil</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-300">🇷🇺 Russia</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-300">🇿🇦 S. Africa</span>
         </div>
       </div>
     </div>
 
     <!-- ═══ BRICS KPI STRIP ══════════════════════════ -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-      <div class="glass rounded-lg px-4 py-3">
-        <p class="text-[11px] text-white/35 uppercase tracking-wider font-medium">Total Citizen Requests</p>
-        <p id="kpi-total" class="text-2xl font-bold text-white mt-1 font-mono kpi-value">12,847</p>
-        <p class="text-[11px] text-civic-500 mt-0.5">↑ 23% this quarter</p>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-lg px-4 py-3">
+        <p class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Total Citizen Requests</p>
+        <p id="kpi-total" class="text-2xl font-bold text-slate-900 mt-1 font-mono kpi-value">12,847</p>
+        <p class="text-[11px] text-civic-700 mt-0.5">↑ 23% this quarter</p>
       </div>
-      <div class="glass rounded-lg px-4 py-3">
-        <p class="text-[11px] text-white/35 uppercase tracking-wider font-medium">Languages Processed</p>
-        <p class="text-2xl font-bold text-white mt-1 font-mono kpi-value">14</p>
-        <p class="text-[11px] text-dpi-400 mt-0.5">Hindi, Mandarin, PT, RU +10</p>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-lg px-4 py-3">
+        <p class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Languages Processed</p>
+        <p class="text-2xl font-bold text-slate-900 mt-1 font-mono kpi-value">14</p>
+        <p class="text-[11px] text-dpi-600 mt-0.5">Hindi, Mandarin, PT, RU +10</p>
       </div>
-      <div class="glass rounded-lg px-4 py-3">
-        <p class="text-[11px] text-white/35 uppercase tracking-wider font-medium">Demand Hotspots</p>
-        <p class="text-2xl font-bold text-infra-500 mt-1 font-mono kpi-value">38</p>
-        <p class="text-[11px] text-infra-500 mt-0.5">6 critical, 14 high priority</p>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-lg px-4 py-3">
+        <p class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Demand Hotspots</p>
+        <p class="text-2xl font-bold text-infra-700 mt-1 font-mono kpi-value">38</p>
+        <p class="text-[11px] text-infra-700 mt-0.5">6 critical, 14 high priority</p>
       </div>
-      <div class="glass rounded-lg px-4 py-3">
-        <p class="text-[11px] text-white/35 uppercase tracking-wider font-medium">Policy Matches</p>
-        <p id="kpi-matches" class="text-2xl font-bold text-civic-500 mt-1 font-mono kpi-value">0</p>
-        <p class="text-[11px] text-civic-500 mt-0.5">Aligned with investment plans</p>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-lg px-4 py-3">
+        <p class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Policy Matches</p>
+        <p id="kpi-matches" class="text-2xl font-bold text-civic-700 mt-1 font-mono kpi-value">0</p>
+        <p class="text-[11px] text-civic-700 mt-0.5">Aligned with investment plans</p>
       </div>
-      <div class="glass rounded-lg px-4 py-3">
-        <p class="text-[11px] text-white/35 uppercase tracking-wider font-medium">Investment Alignment</p>
-        <p class="text-2xl font-bold text-dpi-400 mt-1 font-mono kpi-value">87%</p>
-        <p class="text-[11px] text-dpi-400 mt-0.5">Citizen demand ↔ national plans</p>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-lg px-4 py-3">
+        <p class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Investment Alignment</p>
+        <p class="text-2xl font-bold text-dpi-600 mt-1 font-mono kpi-value">87%</p>
+        <p class="text-[11px] text-dpi-600 mt-0.5">Citizen demand ↔ national plans</p>
       </div>
     </div>
 
@@ -227,60 +227,60 @@
       <div class="lg:col-span-5 space-y-6">
 
         <!-- Multimodal Ingestion Channels -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white">Multimodal Data Ingestion</h3>
-            <p class="text-xs text-white/30 mt-0.5">Real-time citizen feedback from diverse input channels</p>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Multimodal Data Ingestion</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Real-time citizen feedback from diverse input channels</p>
           </div>
           <div class="p-4 space-y-3">
             <!-- Voice Notes -->
-            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-dpi-500/15 bg-dpi-500/5">
+            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-dpi-200 bg-dpi-50">
               <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-dpi-500/10 flex items-center justify-center">
-                <svg class="w-4.5 h-4.5 text-dpi-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/></svg>
+                <svg class="w-4.5 h-4.5 text-dpi-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/></svg>
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between">
-                  <p class="text-xs font-semibold text-white/90">Voice Notes (IVR / Field Agents)</p>
+                  <p class="text-xs font-semibold text-slate-900">Voice Notes (IVR / Field Agents)</p>
                   <span class="channel-dot w-2 h-2 rounded-full bg-dpi-500 flex-shrink-0"></span>
                 </div>
-                <p class="text-[11px] text-white/40 mt-0.5">STT → auto-translate → NLP classification</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">STT → auto-translate → NLP classification</p>
                 <div class="flex items-center gap-2 mt-1.5">
-                  <span class="text-[10px] font-mono text-dpi-400 bg-dpi-500/10 px-1.5 py-0.5 rounded">3,412 processed</span>
-                  <span class="text-[10px] font-mono text-white/30">Hindi, Tamil, Bengali</span>
+                  <span class="text-[10px] font-mono text-dpi-600 bg-dpi-500/10 px-1.5 py-0.5 rounded">3,412 processed</span>
+                  <span class="text-[10px] font-mono text-slate-500">Hindi, Tamil, Bengali</span>
                 </div>
               </div>
             </div>
             <!-- WhatsApp / Telegram -->
-            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-civic-500/15 bg-civic-500/5">
+            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-civic-200 bg-civic-50">
               <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-civic-500/10 flex items-center justify-center">
-                <svg class="w-4.5 h-4.5 text-civic-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+                <svg class="w-4.5 h-4.5 text-civic-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between">
-                  <p class="text-xs font-semibold text-white/90">WhatsApp / Telegram Bots</p>
+                  <p class="text-xs font-semibold text-slate-900">WhatsApp / Telegram Bots</p>
                   <span class="channel-dot channel-dot-delay-1 w-2 h-2 rounded-full bg-civic-500 flex-shrink-0"></span>
                 </div>
-                <p class="text-[11px] text-white/40 mt-0.5">Chatbot → intent extraction → geo-tagging</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Chatbot → intent extraction → geo-tagging</p>
                 <div class="flex items-center gap-2 mt-1.5">
-                  <span class="text-[10px] font-mono text-civic-500 bg-civic-500/10 px-1.5 py-0.5 rounded">6,890 processed</span>
-                  <span class="text-[10px] font-mono text-white/30">Mandarin, Portuguese, Russian</span>
+                  <span class="text-[10px] font-mono text-civic-700 bg-civic-500/10 px-1.5 py-0.5 rounded">6,890 processed</span>
+                  <span class="text-[10px] font-mono text-slate-500">Mandarin, Portuguese, Russian</span>
                 </div>
               </div>
             </div>
             <!-- SMS -->
-            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-infra-500/15 bg-infra-500/5">
+            <div class="flex items-center gap-3 px-3.5 py-3 rounded-lg border border-infra-200 bg-infra-50">
               <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-infra-500/10 flex items-center justify-center">
-                <svg class="w-4.5 h-4.5 text-infra-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                <svg class="w-4.5 h-4.5 text-infra-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
               </div>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between">
-                  <p class="text-xs font-semibold text-white/90">SMS / USSD Gateway</p>
+                  <p class="text-xs font-semibold text-slate-900">SMS / USSD Gateway</p>
                   <span class="channel-dot channel-dot-delay-2 w-2 h-2 rounded-full bg-infra-500 flex-shrink-0"></span>
                 </div>
-                <p class="text-[11px] text-white/40 mt-0.5">Keyword parsing → priority classification</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Keyword parsing → priority classification</p>
                 <div class="flex items-center gap-2 mt-1.5">
-                  <span class="text-[10px] font-mono text-infra-500 bg-infra-500/10 px-1.5 py-0.5 rounded">2,545 processed</span>
-                  <span class="text-[10px] font-mono text-white/30">Low-bandwidth regions</span>
+                  <span class="text-[10px] font-mono text-infra-700 bg-infra-500/10 px-1.5 py-0.5 rounded">2,545 processed</span>
+                  <span class="text-[10px] font-mono text-slate-500">Low-bandwidth regions</span>
                 </div>
               </div>
             </div>
@@ -288,63 +288,63 @@
         </section>
 
         <!-- BRICS Investment Alignment Panel -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900 flex items-center gap-2">
               Public Investment Alignment
-              <span class="text-[10px] font-mono text-dpi-400 bg-dpi-500/10 px-1.5 py-0.5 rounded">BRICS 2026</span>
+              <span class="text-[10px] font-mono text-dpi-600 bg-dpi-500/10 px-1.5 py-0.5 rounded">BRICS 2026</span>
             </h3>
-            <p class="text-xs text-white/30 mt-0.5">Citizen demand vs. national infrastructure budget allocation</p>
+            <p class="text-xs text-slate-500 mt-0.5">Citizen demand vs. national infrastructure budget allocation</p>
           </div>
           <div class="p-4 space-y-3" id="investment-panel">
             <div class="space-y-2.5">
               <div>
                 <div class="flex justify-between text-[11px] mb-1">
-                  <span class="text-white/60">🏥 Healthcare</span>
-                  <span class="text-civic-500 font-mono">92% aligned</span>
+                  <span class="text-slate-600">🏥 Healthcare</span>
+                  <span class="text-civic-700 font-mono">92% aligned</span>
                 </div>
-                <div class="h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-civic-600 to-civic-500 rounded-full bar-animate" style="width:92%"></div></div>
-                <div class="flex justify-between text-[10px] text-white/25 mt-0.5">
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-civic-600 to-civic-500 rounded-full bar-animate" style="width:92%"></div></div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
                   <span>Demand: 4,217 requests</span><span>Budget: ₹12,400 Cr</span>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-[11px] mb-1">
-                  <span class="text-white/60">🛣️ Transport</span>
-                  <span class="text-infra-500 font-mono">78% aligned</span>
+                  <span class="text-slate-600">🛣️ Transport</span>
+                  <span class="text-infra-700 font-mono">78% aligned</span>
                 </div>
-                <div class="h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-infra-600 to-infra-500 rounded-full bar-animate" style="width:78%"></div></div>
-                <div class="flex justify-between text-[10px] text-white/25 mt-0.5">
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-infra-600 to-infra-500 rounded-full bar-animate" style="width:78%"></div></div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
                   <span>Demand: 3,891 requests</span><span>Budget: ₹8,200 Cr</span>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-[11px] mb-1">
-                  <span class="text-white/60">🏫 Education</span>
-                  <span class="text-dpi-400 font-mono">85% aligned</span>
+                  <span class="text-slate-600">🏫 Education</span>
+                  <span class="text-dpi-600 font-mono">85% aligned</span>
                 </div>
-                <div class="h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-dpi-600 to-dpi-500 rounded-full bar-animate" style="width:85%"></div></div>
-                <div class="flex justify-between text-[10px] text-white/25 mt-0.5">
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-dpi-600 to-dpi-500 rounded-full bar-animate" style="width:85%"></div></div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
                   <span>Demand: 2,614 requests</span><span>Budget: ₹5,800 Cr</span>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-[11px] mb-1">
-                  <span class="text-white/60">💧 Water & Sanitation</span>
-                  <span class="text-red-400 font-mono">43% aligned</span>
+                  <span class="text-slate-600">💧 Water & Sanitation</span>
+                  <span class="text-red-600 font-mono">43% aligned</span>
                 </div>
-                <div class="h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full bar-animate" style="width:43%"></div></div>
-                <div class="flex justify-between text-[10px] text-white/25 mt-0.5">
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full bar-animate" style="width:43%"></div></div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
                   <span>Demand: 1,824 requests</span><span>Budget: ₹1,200 Cr ⚠️</span>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-[11px] mb-1">
-                  <span class="text-white/60">⚡ Energy</span>
-                  <span class="text-purple-400 font-mono">71% aligned</span>
+                  <span class="text-slate-600">⚡ Energy</span>
+                  <span class="text-purple-600 font-mono">71% aligned</span>
                 </div>
-                <div class="h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-600 to-purple-400 rounded-full bar-animate" style="width:71%"></div></div>
-                <div class="flex justify-between text-[10px] text-white/25 mt-0.5">
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-600 to-purple-400 rounded-full bar-animate" style="width:71%"></div></div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
                   <span>Demand: 1,301 requests</span><span>Budget: ₹3,600 Cr</span>
                 </div>
               </div>
@@ -353,87 +353,87 @@
         </section>
 
         <!-- Citizen Feedback Simulation -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white">Simulate Citizen Request</h3>
-            <p class="text-xs text-white/30 mt-0.5">Submit infrastructure development requests through the AI pipeline</p>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Simulate Citizen Request</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Submit infrastructure development requests through the AI pipeline</p>
           </div>
           <div class="p-4 grid grid-cols-2 gap-2.5">
             <button onclick="scenario('happy')"
-              class="text-left px-3.5 py-3 rounded-md border border-white/8 bg-white/3 hover:bg-white/6 active:bg-white/10 transition-colors">
-              <p class="text-xs font-semibold text-white/80">✅ High-Priority Match</p>
-              <p class="text-[11px] text-white/35 mt-0.5 font-mono">Hospital request → <span class="text-civic-500">Approved</span></p>
+              class="text-left px-3.5 py-3 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-200 active:bg-slate-200 transition-colors">
+              <p class="text-xs font-semibold text-slate-800">✅ High-Priority Match</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 font-mono">Hospital request → <span class="text-civic-700">Approved</span></p>
             </button>
             <button onclick="scenario('breach')"
-              class="text-left px-3.5 py-3 rounded-md border border-white/8 bg-white/3 hover:bg-white/6 active:bg-white/10 transition-colors">
-              <p class="text-xs font-semibold text-white/80">⚠️ Low-Demand Zone</p>
-              <p class="text-[11px] text-white/35 mt-0.5 font-mono">Below threshold → <span class="text-red-400">Deferred</span></p>
+              class="text-left px-3.5 py-3 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-200 active:bg-slate-200 transition-colors">
+              <p class="text-xs font-semibold text-slate-800">⚠️ Low-Demand Zone</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 font-mono">Below threshold → <span class="text-red-600">Deferred</span></p>
             </button>
             <button onclick="scenario('replay')"
-              class="text-left px-3.5 py-3 rounded-md border border-white/8 bg-white/3 hover:bg-white/6 active:bg-white/10 transition-colors">
-              <p class="text-xs font-semibold text-white/80">🔄 Duplicate Detection</p>
-              <p class="text-[11px] text-white/35 mt-0.5 font-mono">Same request → <span class="text-amber-400">Merged</span></p>
+              class="text-left px-3.5 py-3 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-200 active:bg-slate-200 transition-colors">
+              <p class="text-xs font-semibold text-slate-800">🔄 Duplicate Detection</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 font-mono">Same request → <span class="text-amber-600">Merged</span></p>
             </button>
             <button onclick="scenario('timeout')"
-              class="text-left px-3.5 py-3 rounded-md border border-white/8 bg-white/3 hover:bg-white/6 active:bg-white/10 transition-colors">
-              <p class="text-xs font-semibold text-white/80">🔌 Service Resilience</p>
-              <p class="text-[11px] text-white/35 mt-0.5 font-mono">API timeout → <span class="text-orange-400">Graceful</span></p>
+              class="text-left px-3.5 py-3 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-200 active:bg-slate-200 transition-colors">
+              <p class="text-xs font-semibold text-slate-800">🔌 Service Resilience</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 font-mono">API timeout → <span class="text-orange-600">Graceful</span></p>
             </button>
             <button onclick="scenario('ratelimit')"
-              class="col-span-2 text-left px-3.5 py-3 rounded-md border border-white/8 bg-white/3 hover:bg-white/6 active:bg-white/10 transition-colors">
-              <p class="text-xs font-semibold text-white/80">🛡️ Spam / Bot Flood Protection</p>
-              <p class="text-[11px] text-white/35 mt-0.5 font-mono">6× Rapid Submissions → <span class="text-red-400">429 Rate Limited</span></p>
+              class="col-span-2 text-left px-3.5 py-3 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-200 active:bg-slate-200 transition-colors">
+              <p class="text-xs font-semibold text-slate-800">🛡️ Spam / Bot Flood Protection</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 font-mono">6× Rapid Submissions → <span class="text-red-600">429 Rate Limited</span></p>
             </button>
-            <button onclick="runBuyerAgent(false)" class="text-left px-3.5 py-3 rounded-md border border-dpi-500/20 bg-dpi-500/8 hover:bg-dpi-500/15 transition-colors">
-              <p class="text-xs font-semibold text-dpi-300">🤖 AI Analysis · Valid</p><p class="text-[11px] text-dpi-400 mt-0.5 font-mono">LLM classifies citizen need</p>
+            <button onclick="runBuyerAgent(false)" class="text-left px-3.5 py-3 rounded-md border border-slate-200 bg-dpi-500/8 hover:bg-dpi-500/15 transition-colors">
+              <p class="text-xs font-semibold text-dpi-700">🤖 AI Analysis · Valid</p><p class="text-[11px] text-dpi-600 mt-0.5 font-mono">LLM classifies citizen need</p>
             </button>
             <button onclick="runBuyerAgent(true)" class="text-left px-3.5 py-3 rounded-md border border-red-500/20 bg-red-500/8 hover:bg-red-500/15 transition-colors">
-              <p class="text-xs font-semibold text-red-300">🤖 AI Analysis · Adversarial</p><p class="text-[11px] text-red-400 mt-0.5 font-mono">Injection → policy block</p>
+              <p class="text-xs font-semibold text-red-300">🤖 AI Analysis · Adversarial</p><p class="text-[11px] text-red-600 mt-0.5 font-mono">Injection → policy block</p>
             </button>
           </div>
         </section>
 
         <!-- Manual Request Control -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white">Manual Request Submission</h3>
-            <p class="text-xs text-white/30 mt-0.5">Direct citizen infrastructure request pipeline</p>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Manual Request Submission</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Direct citizen infrastructure request pipeline</p>
           </div>
           <form id="form" class="p-5 space-y-4">
             <div>
-              <label for="quantity" class="block text-xs font-medium text-white/50 mb-1">Citizen Petition Count</label>
-              <input id="quantity" type="number" min="1" value="1" class="w-full border border-white/10 rounded-md px-3 py-2 text-sm text-white bg-white/5 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
+              <label for="quantity" class="block text-xs font-medium text-slate-600 mb-1">Citizen Petition Count</label>
+              <input id="quantity" type="number" min="1" value="1" class="w-full border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 bg-slate-100 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
             </div>
             <div>
-              <label for="agent" class="block text-xs font-medium text-white/50 mb-1">Channel Agent ID</label>
+              <label for="agent" class="block text-xs font-medium text-slate-600 mb-1">Channel Agent ID</label>
               <input id="agent" value="dashboard_evaluator"
-                class="w-full border border-white/10 rounded-md px-3 py-2 text-sm text-white bg-white/5 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
+                class="w-full border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 bg-slate-100 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
             </div>
             <div>
-              <label for="sku" class="block text-xs font-medium text-white/50 mb-1">Infrastructure Category</label>
+              <label for="sku" class="block text-xs font-medium text-slate-600 mb-1">Infrastructure Category</label>
               <select id="sku"
-                class="w-full border border-white/10 rounded-md px-3 py-2 text-sm text-white bg-[#0f1117] focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500">
+                class="w-full border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 bg-white focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500">
                 <option value="enterprise_cloud_compute">Healthcare · Hospital / Clinic — Priority Index 50,000</option>
                 <option value="api_bulk_credits">Transport · Bridge / Road Repair — Priority Index 15,000</option>
                 <option value="saas_annual_license">Education · School Construction — Priority Index 8,000</option>
               </select>
             </div>
             <div>
-              <label for="price" class="block text-xs font-medium text-white/50 mb-1">Demand Intensity Score</label>
+              <label for="price" class="block text-xs font-medium text-slate-600 mb-1">Demand Intensity Score</label>
               <input id="price" type="number" step="0.01" value="47000"
-                class="w-full border border-white/10 rounded-md px-3 py-2 text-sm text-white bg-white/5 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
+                class="w-full border border-slate-300 rounded-md px-3 py-2 text-sm text-slate-900 bg-slate-100 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
             </div>
             <div>
-              <label for="key" class="block text-xs font-medium text-white/50 mb-1">Request Deduplication Key</label>
+              <label for="key" class="block text-xs font-medium text-slate-600 mb-1">Request Deduplication Key</label>
               <input id="key"
-                class="w-full border border-white/10 rounded-md px-3 py-2 text-xs text-white/40 bg-white/5 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
+                class="w-full border border-slate-300 rounded-md px-3 py-2 text-xs text-slate-500 bg-slate-100 focus:outline-none focus:border-dpi-500 focus:ring-1 focus:ring-dpi-500 font-mono">
             </div>
             <label class="flex items-center gap-2 cursor-pointer">
-              <input id="timeout" type="checkbox" class="w-3.5 h-3.5 rounded border-white/20 text-dpi-600 focus:ring-dpi-500 bg-white/5">
-              <span class="text-xs text-white/50">Simulate data-source timeout</span>
+              <input id="timeout" type="checkbox" class="w-3.5 h-3.5 rounded border-slate-300 text-dpi-600 focus:ring-dpi-500 bg-slate-100">
+              <span class="text-xs text-slate-600">Simulate data-source timeout</span>
             </label>
             <button type="submit" id="dispatch-btn"
-              class="w-full bg-dpi-600 hover:bg-dpi-700 active:bg-dpi-800 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-medium py-2.5 rounded-md transition-colors">
+              class="w-full bg-dpi-600 hover:bg-dpi-700 active:bg-dpi-800 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 text-sm font-medium py-2.5 rounded-md transition-colors">
               Submit Infrastructure Request
             </button>
           </form>
@@ -445,74 +445,74 @@
       <div class="lg:col-span-7 space-y-6">
 
         <!-- Growth metric -->
-        <section class="bg-gradient-to-r from-civic-500/8 to-transparent border border-civic-500/15 rounded-lg px-5 py-4 flex justify-between items-center">
-          <div><h3 class="text-sm font-semibold text-civic-400">Infrastructure Projects Prioritized</h3><p class="text-xs text-civic-500/60 mt-1">Citizen-demand-matched projects surfaced for BRICS policymaker review this session.</p></div>
-          <p id="growth-metric" class="text-2xl font-semibold text-civic-500 font-mono">0</p>
+        <section class="bg-gradient-to-r from-civic-500/8 to-transparent border border-civic-200 rounded-lg px-5 py-4 flex justify-between items-center">
+          <div><h3 class="text-sm font-semibold text-civic-600">Infrastructure Projects Prioritized</h3><p class="text-xs text-civic-700/60 mt-1">Citizen-demand-matched projects surfaced for BRICS policymaker review this session.</p></div>
+          <p id="growth-metric" class="text-2xl font-semibold text-civic-700 font-mono">0</p>
         </section>
 
         <!-- Demographic Data Overlay -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900 flex items-center gap-2">
               BRICS Demographic & Infrastructure Indices
-              <span class="text-[10px] font-mono text-infra-500 bg-infra-500/10 px-1.5 py-0.5 rounded">Live Data</span>
+              <span class="text-[10px] font-mono text-infra-700 bg-infra-500/10 px-1.5 py-0.5 rounded">Live Data</span>
             </h3>
-            <p class="text-xs text-white/30 mt-0.5">National development indicators informing priority calculations</p>
+            <p class="text-xs text-slate-500 mt-0.5">National development indicators informing priority calculations</p>
           </div>
           <div class="p-4">
             <div class="grid grid-cols-5 gap-2">
-              <div class="text-center p-2.5 rounded-lg bg-white/3 border border-white/5">
+              <div class="text-center p-2.5 rounded-lg bg-slate-50 border border-slate-200">
                 <p class="text-lg mb-0.5">🇮🇳</p>
-                <p class="text-[10px] font-medium text-white/60">India</p>
-                <p class="text-[10px] font-mono text-dpi-400 mt-1">HDI 0.644</p>
-                <p class="text-[10px] font-mono text-infra-500">Gap 42%</p>
+                <p class="text-[10px] font-medium text-slate-600">India</p>
+                <p class="text-[10px] font-mono text-dpi-600 mt-1">HDI 0.644</p>
+                <p class="text-[10px] font-mono text-infra-700">Gap 42%</p>
               </div>
-              <div class="text-center p-2.5 rounded-lg bg-white/3 border border-white/5">
+              <div class="text-center p-2.5 rounded-lg bg-slate-50 border border-slate-200">
                 <p class="text-lg mb-0.5">🇨🇳</p>
-                <p class="text-[10px] font-medium text-white/60">China</p>
-                <p class="text-[10px] font-mono text-dpi-400 mt-1">HDI 0.768</p>
-                <p class="text-[10px] font-mono text-infra-500">Gap 28%</p>
+                <p class="text-[10px] font-medium text-slate-600">China</p>
+                <p class="text-[10px] font-mono text-dpi-600 mt-1">HDI 0.768</p>
+                <p class="text-[10px] font-mono text-infra-700">Gap 28%</p>
               </div>
-              <div class="text-center p-2.5 rounded-lg bg-white/3 border border-white/5">
+              <div class="text-center p-2.5 rounded-lg bg-slate-50 border border-slate-200">
                 <p class="text-lg mb-0.5">🇧🇷</p>
-                <p class="text-[10px] font-medium text-white/60">Brazil</p>
-                <p class="text-[10px] font-mono text-dpi-400 mt-1">HDI 0.754</p>
-                <p class="text-[10px] font-mono text-infra-500">Gap 35%</p>
+                <p class="text-[10px] font-medium text-slate-600">Brazil</p>
+                <p class="text-[10px] font-mono text-dpi-600 mt-1">HDI 0.754</p>
+                <p class="text-[10px] font-mono text-infra-700">Gap 35%</p>
               </div>
-              <div class="text-center p-2.5 rounded-lg bg-white/3 border border-white/5">
+              <div class="text-center p-2.5 rounded-lg bg-slate-50 border border-slate-200">
                 <p class="text-lg mb-0.5">🇷🇺</p>
-                <p class="text-[10px] font-medium text-white/60">Russia</p>
-                <p class="text-[10px] font-mono text-dpi-400 mt-1">HDI 0.822</p>
-                <p class="text-[10px] font-mono text-infra-500">Gap 22%</p>
+                <p class="text-[10px] font-medium text-slate-600">Russia</p>
+                <p class="text-[10px] font-mono text-dpi-600 mt-1">HDI 0.822</p>
+                <p class="text-[10px] font-mono text-infra-700">Gap 22%</p>
               </div>
-              <div class="text-center p-2.5 rounded-lg bg-white/3 border border-white/5">
+              <div class="text-center p-2.5 rounded-lg bg-slate-50 border border-slate-200">
                 <p class="text-lg mb-0.5">🇿🇦</p>
-                <p class="text-[10px] font-medium text-white/60">S. Africa</p>
-                <p class="text-[10px] font-mono text-dpi-400 mt-1">HDI 0.713</p>
-                <p class="text-[10px] font-mono text-infra-500">Gap 51%</p>
+                <p class="text-[10px] font-medium text-slate-600">S. Africa</p>
+                <p class="text-[10px] font-mono text-dpi-600 mt-1">HDI 0.713</p>
+                <p class="text-[10px] font-mono text-infra-700">Gap 51%</p>
               </div>
             </div>
           </div>
         </section>
 
         <!-- AI Analysis Output -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5"><h3 class="text-sm font-semibold text-white">AI Classification vs. Deterministic Policy Gate</h3><p class="text-xs text-white/30 mt-0.5">The LLM classifies citizen intent; it never decides infrastructure allocation policy.</p></div>
-          <pre id="negotiation" class="m-4 font-mono text-xs bg-white/3 border border-white/5 rounded-md p-4 min-h-[72px] text-white/40">Run a citizen request scenario to inspect the AI classification pipeline.</pre>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200"><h3 class="text-sm font-semibold text-slate-900">AI Classification vs. Deterministic Policy Gate</h3><p class="text-xs text-slate-500 mt-0.5">The LLM classifies citizen intent; it never decides infrastructure allocation policy.</p></div>
+          <pre id="negotiation" class="m-4 font-mono text-xs bg-slate-50 border border-slate-200 rounded-md p-4 min-h-[72px] text-slate-500">Run a citizen request scenario to inspect the AI classification pipeline.</pre>
         </section>
 
         <!-- Multilingual Citizen Feedback Feed -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5 flex items-center justify-between">
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between">
             <div>
-              <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+              <h3 class="text-sm font-semibold text-slate-900 flex items-center gap-2">
                 Multilingual Citizen Feedback Feed
                 <span class="relative flex h-2 w-2" title="Live Ingestion">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-civic-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-civic-500"></span>
                 </span>
               </h3>
-              <p class="text-xs text-white/30 mt-0.5">Original text with auto-translated English and AI-assigned priority</p>
+              <p class="text-xs text-slate-500 mt-0.5">Original text with auto-translated English and AI-assigned priority</p>
             </div>
           </div>
           <div id="feedback-feed" class="max-h-80 overflow-auto">
@@ -521,23 +521,23 @@
         </section>
 
         <!-- Infrastructure Demand Hotspots / Guardrails -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5 flex items-center justify-between">
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between">
             <div>
-              <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+              <h3 class="text-sm font-semibold text-slate-900 flex items-center gap-2">
                 Infrastructure Demand Hotspots
                 <span class="relative flex h-2 w-2" title="Policy Engine Active">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-civic-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-civic-500"></span>
                 </span>
               </h3>
-              <p class="text-xs text-white/30 mt-0.5">Deterministic priority thresholds — zero-LLM policy enforcement</p>
+              <p class="text-xs text-slate-500 mt-0.5">Deterministic priority thresholds — zero-LLM policy enforcement</p>
             </div>
           </div>
           <div class="overflow-x-auto">
             <table id="guardrails-table" class="w-full text-sm">
               <thead>
-                <tr class="text-left text-xs text-white/30 uppercase tracking-wider border-b border-white/5">
+                <tr class="text-left text-xs text-slate-500 uppercase tracking-wider border-b border-slate-200">
                   <th class="px-5 py-2.5 font-medium">Infrastructure Sector</th>
                   <th class="px-5 py-2.5 font-medium text-right">Demand Index</th>
                   <th class="px-5 py-2.5 font-medium text-right">Priority Threshold</th>
@@ -545,56 +545,56 @@
                 </tr>
               </thead>
               <tbody id="guardrails-body">
-                <tr><td colspan="4" class="px-5 py-3 text-xs text-white/30">Loading infrastructure indices…</td></tr>
+                <tr><td colspan="4" class="px-5 py-3 text-xs text-slate-500">Loading infrastructure indices…</td></tr>
               </tbody>
             </table>
           </div>
         </section>
 
         <!-- Pipeline -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5">
-            <h3 class="text-sm font-semibold text-white">Decision Pipeline</h3>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Decision Pipeline</h3>
           </div>
           <div id="pipeline" class="p-4 grid grid-cols-4 gap-2">
             <div class="step-card step-idle rounded-md border p-3 transition-all duration-200" data-step="0">
-              <p class="text-xs font-semibold text-white/60">1 · Ingest</p>
-              <p class="text-[11px] text-white/30 mt-0.5">Multilingual NLP</p>
+              <p class="text-xs font-semibold text-slate-600">1 · Ingest</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">Multilingual NLP</p>
             </div>
             <div class="step-card step-idle rounded-md border p-3 transition-all duration-200" data-step="1">
-              <p class="text-xs font-semibold text-white/60">2 · Validate</p>
-              <p class="text-[11px] text-white/30 mt-0.5">Policy threshold</p>
+              <p class="text-xs font-semibold text-slate-600">2 · Validate</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">Policy threshold</p>
             </div>
             <div class="step-card step-idle rounded-md border p-3 transition-all duration-200" data-step="2">
-              <p class="text-xs font-semibold text-white/60">3 · Dedupe</p>
-              <p class="text-[11px] text-white/30 mt-0.5">Cross-region merge</p>
+              <p class="text-xs font-semibold text-slate-600">3 · Dedupe</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">Cross-region merge</p>
             </div>
             <div class="step-card step-idle rounded-md border p-3 transition-all duration-200" data-step="3">
-              <p class="text-xs font-semibold text-white/60">4 · Prioritize</p>
-              <p id="razorpay-stage" class="text-[11px] text-white/30 mt-0.5">BRICS recommendation pending</p>
+              <p class="text-xs font-semibold text-slate-600">4 · Prioritize</p>
+              <p id="razorpay-stage" class="text-[11px] text-slate-500 mt-0.5">BRICS recommendation pending</p>
             </div>
           </div>
         </section>
 
         <!-- Response Inspector -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5 flex items-center justify-between">
-            <h3 class="text-sm font-semibold text-white">Analysis Inspector</h3>
-            <span id="status" class="text-xs text-white/30 font-mono">Awaiting request</span>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between">
+            <h3 class="text-sm font-semibold text-slate-900">Analysis Inspector</h3>
+            <span id="status" class="text-xs text-slate-500 font-mono">Awaiting request</span>
           </div>
           <div class="p-4">
-            <pre id="response" class="font-mono text-xs bg-white/3 border border-white/5 rounded-md p-4 min-h-[120px] max-h-64 overflow-auto text-white/50 leading-relaxed">{ "ready": true }</pre>
+            <pre id="response" class="font-mono text-xs bg-slate-50 border border-slate-200 rounded-md p-4 min-h-[120px] max-h-64 overflow-auto text-slate-600 leading-relaxed">{ "ready": true }</pre>
           </div>
         </section>
 
         <!-- Audit Ledger -->
-        <section class="glass rounded-lg">
-          <div class="px-5 py-3.5 border-b border-white/5 flex items-center justify-between">
-            <h3 class="text-sm font-semibold text-white">Decision Audit Trail</h3>
-            <button onclick="loadAudit()" class="text-xs text-dpi-400 hover:text-dpi-300 font-medium transition-colors">Refresh</button>
+        <section class="bg-white border border-slate-200 shadow-sm rounded-lg">
+          <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between">
+            <h3 class="text-sm font-semibold text-slate-900">Decision Audit Trail</h3>
+            <button onclick="loadAudit()" class="text-xs text-dpi-600 hover:text-dpi-700 font-medium transition-colors">Refresh</button>
           </div>
           <div id="ledger" class="max-h-56 overflow-auto">
-            <p class="text-xs text-white/30 px-5 py-4">Loading audit trail…</p>
+            <p class="text-xs text-slate-500 px-5 py-4">Loading audit trail…</p>
           </div>
         </section>
 
@@ -602,7 +602,7 @@
     </div>
   </main>
 
-  <footer class="border-t border-white/5 mt-8 py-5 text-center text-xs text-white/25">
+  <footer class="border-t border-slate-200 mt-8 py-5 text-center text-xs text-slate-400">
     Aegis-DPI · Citizen-Centric Infrastructure Prioritization · Digital Public Good for BRICS Governance
   </footer>
   <div class="brics-stripe"></div>
@@ -655,37 +655,37 @@
       const feed = $('feedback-feed');
       feed.innerHTML = CITIZEN_FEEDBACK.map((fb, i) => {
         const priorityColors = {
-          Critical: 'text-red-400 bg-red-500/10 border-red-500/20',
-          High: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
-          Medium: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+          Critical: 'text-red-700 bg-red-50 border border-red-200',
+          High: 'text-amber-700 bg-amber-50 border border-amber-200',
+          Medium: 'text-blue-700 bg-blue-50 border border-blue-200',
         };
         const channelColors = {
-          Voice: 'text-dpi-400 bg-dpi-500/10',
-          WhatsApp: 'text-civic-500 bg-civic-500/10',
-          WeChat: 'text-civic-500 bg-civic-500/10',
-          Telegram: 'text-purple-400 bg-purple-500/10',
-          SMS: 'text-infra-500 bg-infra-500/10',
+          Voice: 'text-dpi-700 bg-dpi-50 border border-dpi-200',
+          WhatsApp: 'text-civic-700 bg-civic-50 border border-civic-200',
+          WeChat: 'text-civic-700 bg-civic-50 border border-civic-200',
+          Telegram: 'text-purple-700 bg-purple-50 border border-purple-200',
+          SMS: 'text-infra-700 bg-infra-50 border border-infra-200',
         };
-        const pc = priorityColors[fb.priority] || 'text-white/40 bg-white/5 border-white/10';
-        const cc = channelColors[fb.channel] || 'text-white/40 bg-white/5';
+        const pc = priorityColors[fb.priority] || 'text-slate-600 bg-slate-100 border border-slate-200';
+        const cc = channelColors[fb.channel] || 'text-slate-600 bg-slate-100 border border-slate-200';
         return `
-          <div class="feed-entry px-5 py-3 border-b border-white/3 last:border-0 hover:bg-white/3 transition-colors" style="animation-delay: ${i * 60}ms">
+          <div class="feed-entry px-5 py-3 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors" style="animation-delay: ${i * 60}ms">
             <div class="flex items-start justify-between gap-3">
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
                   <span class="text-sm">${fb.icon}</span>
-                  <span class="text-[10px] font-mono text-white/25">${fb.id}</span>
+                  <span class="text-[10px] font-mono text-slate-400">${fb.id}</span>
                   <span class="text-[10px]">${fb.flag}</span>
                   <span class="text-[10px] font-medium px-1.5 py-0.5 rounded ${cc}">${fb.channel}</span>
                   <span class="text-[10px] font-medium px-1.5 py-0.5 rounded border ${pc}">${fb.priority}</span>
-                  <span class="text-[10px] text-white/25">${fb.langLabel}</span>
+                  <span class="text-[10px] text-slate-400">${fb.langLabel}</span>
                 </div>
-                <p class="text-xs text-white/45 leading-relaxed" lang="${fb.lang}">"${fb.original}"</p>
-                <p class="text-xs text-white/80 font-medium mt-1">→ ${fb.translated}</p>
+                <p class="text-xs text-slate-600 leading-relaxed" lang="${fb.lang}">"${fb.original}"</p>
+                <p class="text-xs text-slate-800 font-medium mt-1">→ ${fb.translated}</p>
                 <div class="flex items-center gap-3 mt-1.5">
-                  <span class="text-[10px] text-white/25">${fb.category}</span>
-                  <span class="text-[10px] text-white/15">·</span>
-                  <span class="text-[10px] text-white/25">${fb.region}</span>
+                  <span class="text-[10px] text-slate-400">${fb.category}</span>
+                  <span class="text-[10px] text-slate-900/15">·</span>
+                  <span class="text-[10px] text-slate-400">${fb.region}</span>
                 </div>
               </div>
             </div>
@@ -720,15 +720,15 @@
         const gap = item.base_price_inr - item.minimum_profit_floor_inr;
         const pct = ((gap / item.base_price_inr) * 100).toFixed(0);
         return `
-          <tr class="border-b border-white/3 last:border-0 hover:bg-white/3 transition-colors">
+          <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
             <td class="px-5 py-3">
-              <p class="text-sm font-medium text-white/80">${displayName}</p>
-              <p class="text-[11px] text-white/25 font-mono mt-0.5">${item.sku}</p>
+              <p class="text-sm font-medium text-slate-800">${displayName}</p>
+              <p class="text-[11px] text-slate-400 font-mono mt-0.5">${item.sku}</p>
             </td>
-            <td class="px-5 py-3 text-right font-mono text-sm text-white/60">${item.base_price_inr.toLocaleString('en-IN')}</td>
-            <td class="px-5 py-3 text-right font-mono text-sm text-white/60">${item.minimum_profit_floor_inr.toLocaleString('en-IN')}</td>
+            <td class="px-5 py-3 text-right font-mono text-sm text-slate-600">${item.base_price_inr.toLocaleString('en-IN')}</td>
+            <td class="px-5 py-3 text-right font-mono text-sm text-slate-600">${item.minimum_profit_floor_inr.toLocaleString('en-IN')}</td>
             <td class="px-5 py-3 text-right">
-              <span class="inline-block text-xs font-medium text-infra-500 bg-infra-500/10 border border-infra-500/20 px-2 py-0.5 rounded font-mono">${gap.toLocaleString('en-IN')} (${pct}%)</span>
+              <span class="inline-block text-xs font-medium text-infra-700 bg-infra-500/10 border border-infra-500/20 px-2 py-0.5 rounded font-mono">${gap.toLocaleString('en-IN')} (${pct}%)</span>
             </td>
           </tr>
         `;
@@ -791,7 +791,7 @@
 
       setAllActive();
       $('status').textContent = 'Processing…';
-      $('status').className = 'text-xs text-dpi-400 font-mono';
+      $('status').className = 'text-xs text-dpi-600 font-mono';
 
       try {
         const r = await fetch('/v1/agent/checkout', {
@@ -802,7 +802,7 @@
         const body = await r.json();
 
         $('status').textContent = `HTTP ${r.status}`;
-        $('status').className = 'text-xs font-mono font-medium ' + (r.ok ? 'text-civic-500' : 'text-red-400');
+        $('status').className = 'text-xs font-mono font-medium ' + (r.ok ? 'text-civic-700' : 'text-red-600');
         $('response').textContent = JSON.stringify(body, null, 2);
 
         animatePipeline(r.status);
@@ -825,7 +825,7 @@
         return r.status;
       } catch (e) {
         $('status').textContent = 'Network error';
-        $('status').className = 'text-xs font-mono text-red-400';
+        $('status').className = 'text-xs font-mono text-red-600';
         $('response').textContent = String(e);
         document.querySelectorAll('.step-card').forEach(el => {
           el.className = 'step-card step-fail rounded-md border p-3 transition-all duration-200';
@@ -935,7 +935,7 @@
         success: 'bg-civic-600', error: 'bg-red-600',
         warning: 'bg-infra-600', info: 'bg-dpi-600',
       };
-      el.className = `pointer-events-auto ${colors[type] || colors.info} text-white text-xs font-medium px-4 py-2.5 rounded-md shadow-lg`;
+      el.className = `pointer-events-auto ${colors[type] || colors.info} text-slate-900 text-xs font-medium px-4 py-2.5 rounded-md shadow-lg`;
       el.style.animation = 'fadeSlide 0.25s ease-out';
       el.textContent = message;
       $('toast-container').appendChild(el);
@@ -945,12 +945,12 @@
 
     /* ── Audit Ledger ──────────────────────────────── */
     async function loadAudit() {
-      $('ledger').innerHTML = '<p class="text-xs text-white/30 px-5 py-4">Loading decision audit trail…</p>';
+      $('ledger').innerHTML = '<p class="text-xs text-slate-500 px-5 py-4">Loading decision audit trail…</p>';
       try {
         const data = await fetchJson('/v1/agent/audit');
         const logs = data.audit_logs || [];
         if (!logs.length) {
-          $('ledger').innerHTML = '<p class="text-xs text-white/30 px-5 py-4">No audit events yet.</p>';
+          $('ledger').innerHTML = '<p class="text-xs text-slate-500 px-5 py-4">No audit events yet.</p>';
           return true;
         }
 
@@ -965,33 +965,33 @@
         };
 
         $('ledger').innerHTML = '<table class="w-full text-xs">' +
-          '<thead><tr class="text-left text-[11px] text-white/25 uppercase tracking-wider border-b border-white/5">' +
+          '<thead><tr class="text-left text-[11px] text-slate-400 uppercase tracking-wider border-b border-slate-200">' +
           '<th class="px-5 py-2 font-medium">Time</th><th class="px-5 py-2 font-medium">Event</th>' +
           '<th class="px-5 py-2 font-medium">Status</th><th class="px-5 py-2 font-medium">Key</th></tr></thead><tbody>' +
           logs.map(a => {
             const ok = a.status_code < 400;
             const evColors = {
-              ORDER_CREATED_BOUNDED: 'text-civic-500 bg-civic-500/10',
-              IDEMPOTENT_CACHE_HIT: 'text-amber-400 bg-amber-500/10',
-              POLICY_VIOLATION: 'text-red-400 bg-red-500/10',
-              TIMEOUT_INTERCEPTED: 'text-orange-400 bg-orange-500/10',
-              SKU_NOT_FOUND: 'text-red-400 bg-red-500/10',
-              RATE_LIMIT_BREACH: 'text-red-400 bg-red-500/10',
-              ASYNC_PAYMENT_CAPTURED: 'text-blue-400 bg-blue-500/10',
+              ORDER_CREATED_BOUNDED: 'text-civic-700 bg-civic-50 border border-civic-200',
+              IDEMPOTENT_CACHE_HIT: 'text-amber-600 bg-amber-500/10',
+              POLICY_VIOLATION: 'text-red-600 bg-red-500/10',
+              TIMEOUT_INTERCEPTED: 'text-orange-600 bg-orange-500/10',
+              SKU_NOT_FOUND: 'text-red-600 bg-red-500/10',
+              RATE_LIMIT_BREACH: 'text-red-600 bg-red-500/10',
+              ASYNC_PAYMENT_CAPTURED: 'text-blue-600 bg-blue-500/10',
             };
-            const ec = evColors[a.event_type] || 'text-white/40 bg-white/5';
+            const ec = evColors[a.event_type] || 'text-slate-600 bg-slate-100 border border-slate-200';
             const label = eventLabels[a.event_type] || a.event_type;
-            return `<tr class="border-b border-white/3 last:border-0">
-              <td class="px-5 py-2 text-white/40 font-mono tabular-nums">${new Date(a.created_at).toLocaleTimeString()}</td>
+            return `<tr class="border-b border-slate-100 last:border-0">
+              <td class="px-5 py-2 text-slate-500 font-mono tabular-nums">${new Date(a.created_at).toLocaleTimeString()}</td>
               <td class="px-5 py-2"><span class="px-1.5 py-0.5 rounded text-[10px] font-medium ${ec}">${label}</span></td>
-              <td class="px-5 py-2 font-mono font-medium ${ok ? 'text-civic-500' : 'text-red-400'}">${a.status_code}</td>
-              <td class="px-5 py-2 font-mono text-white/25 truncate max-w-[140px]">${a.payload.idempotency_key ? a.payload.idempotency_key.slice(0, 12) + '…' : a.payload.sku || '—'}</td>
+              <td class="px-5 py-2 font-mono font-medium ${ok ? 'text-civic-700' : 'text-red-600'}">${a.status_code}</td>
+              <td class="px-5 py-2 font-mono text-slate-400 truncate max-w-[140px]">${a.payload.idempotency_key ? a.payload.idempotency_key.slice(0, 12) + '…' : a.payload.sku || '—'}</td>
             </tr>`;
           }).join('') + '</tbody></table>';
         return true;
       } catch (e) {
         console.warn('Audit trail unavailable during initial load.', e);
-        $('ledger').innerHTML = '<p class="text-xs text-amber-400 bg-amber-500/10 px-5 py-4">Audit trail is temporarily unavailable. The infrastructure policy engine remains active.</p>';
+        $('ledger').innerHTML = '<p class="text-xs text-amber-600 bg-amber-500/10 px-5 py-4">Audit trail is temporarily unavailable. The infrastructure policy engine remains active.</p>';
         return false;
       }
     }
